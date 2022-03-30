@@ -1,0 +1,53 @@
+﻿@{
+}
+@model Mission13.Models.Bowler
+
+<form method="post">
+
+    <input type="hidden" asp-for="BowlerID"/>
+
+    <label asp-for="BowlerFirstName">Bowler First Name: </label>
+    <input asp-for="BowlerFirstName" />
+    <br />
+
+    <label asp-for="BowlerMiddleInit">Bowler Middle Initial: </label>
+    <input asp-for="BowlerMiddleInit" />
+    <br />
+
+    <label asp-for="BowlerLastName">Bowler Last Name: </label>
+    <input asp-for="BowlerLastName" />
+    <br />
+
+    <label asp-for="BowlerAddress">Bowler Address: </label>
+    <input asp-for="BowlerAddress" />
+    <br />
+
+    <label asp-for="BowlerCity">Bowler City: </label>
+    <input asp-for="BowlerCity" />
+    <br />
+
+    <label asp-for="BowlerState">Bowler State: </label>
+    <input asp-for="BowlerState" />
+    <br />
+
+    <label asp-for="BowlerZip">Bowler Zip: </label>
+    <input asp-for="BowlerZip" />
+    <br />
+
+    <label asp-for="BowlerPhoneNumber">Bowler PhoneNumber: </label>
+    <input asp-for="BowlerPhoneNumber" />
+    <br />
+
+    <label asp-for="TeamID">Team Name: </label>
+    <select asp-for="TeamID">
+        <option value="">Select the Team</option>
+        @foreach (Team t in ViewBag.Teams)
+            {
+                <option value="@t.TeamID">@t.TeamName</option>
+            }
+    </select>
+    <br />
+
+    <button type="submit">Add Bowler</button>
+
+</form>
